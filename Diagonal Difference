@@ -1,0 +1,23 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+class Result {
+    public static int diagonalDifference(List<List<Integer>> arr) {
+        int n=arr.size();
+        int sump=0,sums=0;
+      for(int i=0;i<n;i++){
+          sump+=arr.get(i).get(i);
+          int j=n-(i+1);
+          if(j<n && j>=0){
+              sums+=arr.get(i).get(j);
+          }
+      }
+      return Math.abs(sums-sump);
+    }
+}
+time complexity=O(n) 
