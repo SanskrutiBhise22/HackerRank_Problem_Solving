@@ -1,0 +1,18 @@
+class Result {
+    public static int marsExploration(String s) {
+        int sum=0;
+        String s1="SOS";
+       int l=s.length();
+       int j=0;
+       for(int i=0;i<l;i++){
+           char c=s.charAt(i);
+           if(j==3){j=0;}
+           if(c!=s1.charAt(j)){
+               sum++;
+           }
+            j++;
+       }
+       return sum;
+    }
+}
+time complexity = O(n)
