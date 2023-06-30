@@ -1,0 +1,22 @@
+class Result {
+   public static void printArray(List<Integer> arr){
+       for(int i=0;i<arr.size();i++){
+           System.out.print(arr.get(i)+" ");
+       }
+       System.out.println();
+   }
+    public static void insertionSort2(int n, List<Integer> arr) {
+      for(int i=1;i<n;i++){
+          int pivot=arr.get(i);
+          int j=i-1;
+          while(j>=0 && arr.get(j)>pivot){
+              arr.set(j+1,arr.get(j));
+              j--;
+          }
+          arr.set(j+1,pivot);
+          printArray(arr);
+      }
+    }
+}
+time complexity = O(n^2)
+space complexity = O(1);
