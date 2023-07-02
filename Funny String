@@ -1,0 +1,24 @@
+class Result {
+    public static String funnyString(String s) {
+      int a[]=new int[s.length()];
+      int b[]=new int[s.length()];
+      int k=s.length()-1;
+      for(int i=0;i<s.length();i++){
+          a[i]=(char)s.charAt(i);
+          b[i]=(char)s.charAt(k);
+          k--;
+      }
+      int count=0;
+      for(int n=0;n<s.length()-1;n++){
+          if(Math.abs((a[n]-a[n+1]))==Math.abs((b[n]-b[n+1]))){
+              count++;
+          }
+      }
+      if(count!=s.length()-1){
+          return "Not Funny";
+      }
+      return "Funny";
+    }
+}
+time complexity = O(n)
+space complexity = O(n)
