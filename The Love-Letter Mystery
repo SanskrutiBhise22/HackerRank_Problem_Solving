@@ -1,0 +1,15 @@
+class Result {
+    public static int theLoveLetterMystery(String s) {
+      int si=0,ei=s.length()-1,sum=0;
+      while(si<ei){
+          char c1=s.charAt(si),c2=s.charAt(ei);
+          int d=(char)c1-(char)c2;
+          sum+=Math.abs(d);
+          si++;
+          ei--;
+      }
+      return sum;
+    }
+}
+time complexity = O(n)
+space omplexity = O(1)
