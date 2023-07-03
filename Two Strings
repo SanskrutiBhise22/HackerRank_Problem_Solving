@@ -12,5 +12,5 @@ class Result {
      return "NO";
     }
 }
-time complexity = O(n)
-space complexity = O(1)
+time complexity = O(n+m) or O(max(n,m))
+space complexity = O(n)
