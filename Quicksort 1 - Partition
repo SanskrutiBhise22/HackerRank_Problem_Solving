@@ -1,0 +1,24 @@
+class Result {
+    public static List<Integer> quickSort(List<Integer> arr) {
+        int pivot=arr.get(0);
+        int s=-1,pidx=0;
+        for(int i=1;i<arr.size();i++){
+            if(arr.get(i)<pivot){
+                s++;
+                int temp=arr.get(s);
+                arr.set(s,arr.get(i));
+                arr.set(i,temp);
+            }
+            if(arr.get(i)==pivot){
+                pidx=i;
+            }
+        }
+        s++;
+        int temp1=arr.get(s);
+        arr.set(s,pivot);
+        arr.set(pidx,temp1);
+        return arr; 
+    }
+}
+time complexity = O(n)
+space complexity = O(1)
