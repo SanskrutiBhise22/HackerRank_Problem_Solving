@@ -1,0 +1,16 @@
+class Result {
+    public static String twoStrings(String s1, String s2) {
+     Set<Character> map=new HashSet<>();
+     for(int i=0;i<s1.length();i++){
+         map.add(s1.charAt(i));
+     }
+     for(int j=0;j<s2.length();j++){
+         if(map.contains(s2.charAt(j))){
+             return "YES";
+         }
+     }
+     return "NO";
+    }
+}
+time complexity = O(n)
+space complexity = O(1)
