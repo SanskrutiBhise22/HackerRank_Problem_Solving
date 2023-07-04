@@ -1,0 +1,26 @@
+class Result {
+    public static List<Integer> countingSort(List<Integer> arr) {
+      ArrayList<Integer> a=new ArrayList<>();
+      for(int i=0;i<100;i++){
+          a.add(0);
+      }
+      for(int j=0;j<arr.size();j++){
+          int val=a.get(arr.get(j));
+          int n=++val;
+          a.set(arr.get(j),val);
+      }
+      int k=0;
+      for(int m=0;m<100;m++){
+          while(a.get(m)>0){
+              arr.set(k,m);
+              int h=a.get(m);
+              h--;
+              a.set(m,h);
+              k++;
+          }
+      }
+      return arr;
+    }
+}
+time complexity = O(n)
+space complexity = O(1)
