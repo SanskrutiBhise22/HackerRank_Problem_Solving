@@ -1,0 +1,20 @@
+class Result {
+    public static int superDigit(String n, int k) {
+        //Base case
+     if(n.length()==1 && k==1){
+         return Integer.parseInt(n);
+     }
+     //kaam
+     long sum=0;
+     int i=0;
+     while(i<n.length()){
+         sum+=(n.charAt(i)-'0');
+         i++;
+     }
+     sum*=k;
+     String s1=String.valueOf(sum);
+      return superDigit(s1,1);
+    }
+}
+time complexity = O(m * log(k, m))
+space complexity = O(log(k, m))
