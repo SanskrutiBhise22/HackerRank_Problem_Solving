@@ -1,0 +1,23 @@
+class Result {
+    public static String balancedSums(List<Integer> arr) {
+      int n=arr.size();
+      int left[]=new int[n];
+      int right[]=new int[n];
+      left[0]=0;
+      right[n-1]=0;
+      for(int i=1;i<n;i++){
+          left[i]=left[i-1]+arr.get(i-1);
+      }
+      for(int j=n-2;j>=0;j--){
+          right[j]=right[j+1]+arr.get(j+1);
+      }
+      for(int k=0;k<n;k++){
+          if(left[k]==right[k]){
+              return "YES";
+          }
+      }
+      return "NO";
+    }
+}
+time complexity = O(n)
+space complexity = O(n)
