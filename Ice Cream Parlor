@@ -1,0 +1,17 @@
+class Result {
+    public static List<Integer> icecreamParlor(int m, List<Integer> arr) {
+      ArrayList<Integer> a=new ArrayList<>();
+      for(int i=0;i<arr.size()-1;i++){
+          for(int j=i+1;j<arr.size();j++){
+              if(arr.get(i)+arr.get(j)==m){
+                  a.add(i+1);
+                  a.add(j+1);
+              }
+          }
+      }
+      Collections.sort(a);
+      return a;
+    }
+}
+time complexity = O(n^2)
+space complexity = O(1)
