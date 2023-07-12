@@ -1,0 +1,19 @@
+class Result {
+    public static int sockMerchant(int n, List<Integer> ar) {
+      int largest=Integer.MIN_VALUE;
+      for(int i=0;i<n;i++){
+          largest=Math.max(largest,ar.get(i));
+      }
+      int a[]=new int[largest+1];
+      for(int j=0;j<n;j++){
+          a[ar.get(j)]++;
+      }
+      int count=0;
+      for(int k=0;k<largest+1;k++){
+          count+=a[k]/2;
+      }
+      return count;
+    }
+}
+time complexity = O(n) m=largest n=size of arrayList
+space complexity = O(m)
